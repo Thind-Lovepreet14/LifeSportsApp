@@ -20,8 +20,10 @@ This app allows the user to keep track of which exercises are performed for each
 * [Heroku](https://www.heroku.com) - Heroku is a cloud platform as a service supporting several programming languages. 
 
 
-## Author
+## Authors
 * [Lovepreet Thind](https://github.com/Thind-Lovepreet14)
+* [Juan Rosario](https://github.com/Chinkuza)
+* [Brian Shin]
 
 ## License
 
