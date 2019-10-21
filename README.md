@@ -23,7 +23,7 @@ This app allows the user to keep track of which exercises are performed for each
 ## Authors
 * [Lovepreet Thind](https://github.com/Thind-Lovepreet14)
 * [Juan Rosario](https://github.com/Chinkuza)
-* [Brian Shin]
+* [Brian Shin](https://github.com/bshin9)
 
 ## License
 
