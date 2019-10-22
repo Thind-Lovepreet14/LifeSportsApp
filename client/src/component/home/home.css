@@ -1,0 +1,190 @@
+/* ----------------------------------------------------------------------------------- */
+/* VIDEO CONTAINER */
+
+.vidContainer {
+    position: relative;
+    background-color: black;
+    height: 75vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  section video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  section .container{
+    position: relative;
+    z-index: 2;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 1;
+  }
+  
+  .videoText {
+    font-family: 'Suez One', serif;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    
+  }
+  
+  .play-video-link {
+      display: block;
+  }
+
+  h1 {
+      letter-spacing: 5px;
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .vidContainer{
+      background-image: url('https://images.unsplash.com/photo-1486215397028-cb4f31efea3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position-x: -200px;
+    }
+    video {
+      display: none;
+    }
+  }
+
+/* ----------------------------------------------------------------------------------- */
+/* ABOUT CONTAINER */
+.about-main-container {
+  margin: 5% 0;
+  width:100%;
+}
+
+
+.pic-container {
+    background-image: url('https://images.unsplash.com/photo-1520399636535-24741e71b160?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80');
+    height: 80vh;
+    object-fit: fill;
+    width: 100%;
+    background-position: center;
+}
+
+.about-container {
+    margin:5% 0 5% 0;
+}
+
+.about-text {
+    text-align: justify;
+    line-height: 1.8em;
+}
+.about-text, h2 {
+  width:85%;
+  margin:auto;
+}
+h2 {
+  font-weight: 700;
+  font-size: 3.2em;
+  text-align:left;
+  margin-bottom: 10vh;
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* PARALLAX HOME */
+.parallax-home {
+  background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url("https://images.unsplash.com/photo-1530511250146-026c208e059e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1664&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height:60vh;
+  text-align: center;
+  position: relative;
+}
+
+.parallax-text {
+  color: #fff;
+  font-size: 2.2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* SLICK CONTAINER */
+.slick-container {
+  margin-bottom: 15%;
+}
+
+.slick-slider{
+  width:90%;
+  margin:auto;
+
+}
+
+.slick-prev:before, .slick-next:before {
+  color: #000;
+}
+
+.event-img {
+  height: 80vh;
+  width: 90%;
+}
+
+.event-slider-container {
+  position: relative;
+}
+
+.slick-overlay {
+    position: absolute;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgba(0,0,0,0.7);
+    opacity:0;
+    height: 100%;
+    width: 90%;
+    top: 50%;
+    left: 45%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transition: 0.4s ease-in;
+}
+
+.slick-overlay:hover {
+  opacity: 1;
+}
+
+.event-title {
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: 600;
+  margin-bottom: 10%;
+}
+
+.event-description {
+  color: #fff;
+  width: 70%;
+}
