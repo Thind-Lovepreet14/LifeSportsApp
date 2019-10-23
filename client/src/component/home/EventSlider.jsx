@@ -67,7 +67,7 @@ class EventSlider extends React.Component {
           };
         return(
             <div className="slick-container">
-                <h3>Center Mode</h3>
+                <h3 className="event-main-title">News & Events</h3>
                 <Slider {...settings}>
                 {events.map((eventInfo, index) => (
                         <div key={index} className="event-slider-container">
