@@ -133,7 +133,17 @@ h2 {
 /* ----------------------------------------------------------------------------------- */
 /* SLICK CONTAINER */
 .slick-container {
+  margin-top: 10%;
   margin-bottom: 15%;
+}
+
+.event-main-title {
+  font-size: 3em;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  width: fit-content;
+  margin: auto;
+  margin-bottom: 5%;
 }
 
 .slick-slider{
