@@ -13,7 +13,7 @@ const NavBar = () => {
                 <Nav.Link href="#link">Basketball</Nav.Link>
                 <Nav.Link href="#link">Player Profile</Nav.Link>
                 <NavDropdown title="Users" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Boys</NavDropdown.Item>
+                    <NavLink to='/boyUsers'><NavDropdown.Item href="#action/3.1">Boys</NavDropdown.Item></NavLink>
                     <NavDropdown.Item href="#action/3.2">Girls</NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavLink to="/user"><NavDropdown.Item href="#action/3.4">Create User</NavDropdown.Item></NavLink>
