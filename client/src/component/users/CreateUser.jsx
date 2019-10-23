@@ -8,6 +8,7 @@ class CreateUser extends React.Component {
         this.state = {
             firstName: '',
             lastName: '',
+            age: '',
             gender: '',
             position: '',
             height: ''
@@ -22,13 +23,16 @@ class CreateUser extends React.Component {
 
     onSubmit(e) {
         e.preventDefault();
+        
         const user = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
+            age: this.state.age,
             gender: this.state.gender,
             position: this.state.position,
             height: this.state.height,
         }
+        console.log(user)
 
         axios.post('/users/add', user)
             .then(res => console.log(res.data));
@@ -36,6 +40,7 @@ class CreateUser extends React.Component {
         this.setState({
             firstName: '',
             lastName: '',
+            age: '',
             gender: '',
             position: '',
             height: ''
@@ -46,21 +51,26 @@ class CreateUser extends React.Component {
         return (
             <Form onSubmit={this.onSubmit}>
                 <Form.Row>
-                    <Form.Group as={Col} md="6" controlId="formGridFirstName">
+                    <Form.Group as={Col} md="4" controlId="formGridFirstName">
                     <Form.Label>First Name</Form.Label>
-                    <Form.Control type="text" name="firstName" placeholder="First Name" />
+                    <Form.Control type="text" name="firstName" placeholder="First Name" onChange={this.onChangeHandler} />
                     </Form.Group>
 
-                    <Form.Group as={Col} md="6" controlId="formGridLastName">
+                    <Form.Group as={Col} md="4" controlId="formGridLastName">
                     <Form.Label>Last Name</Form.Label>
-                    <Form.Control type="text"  name="lastName" placeholder="Last Name" />
+                    <Form.Control type="text"  name="lastName" placeholder="Last Name" onChange={this.onChangeHandler} />
+                    </Form.Group>
+
+                    <Form.Group as={Col} md="4" controlId="formGridAge">
+                    <Form.Label>Age</Form.Label>
+                    <Form.Control type="number"  name="age" placeholder="Age" onChange={this.onChangeHandler} />
                     </Form.Group>
                 </Form.Row>
 
                 <Form.Row>
                     <Form.Group as={Col} controlId="formGridGender">
                         <Form.Label>Gender</Form.Label>
-                        <Form.Control name="gender" as="select">
+                        <Form.Control name="gender" as="select" onChange={this.onChangeHandler}>
                             <option>Choose...</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -69,7 +79,7 @@ class CreateUser extends React.Component {
 
                     <Form.Group as={Col} controlId="formGridPosition">
                     <Form.Label>Position</Form.Label>
-                    <Form.Control name="position" as="select">
+                    <Form.Control name="position" as="select" onChange={this.onChangeHandler}>
                             <option>Choose...</option>
                             <option value="guard">Guard</option>
                             <option value="forward">Forward</option>
@@ -79,12 +89,12 @@ class CreateUser extends React.Component {
 
 
                     <Form.Group as={Col} controlId="formGridHeight">
-                    <Form.Label>Height(in)</Form.Label>
-                    <Form.Control type="number" name="height"/>
+                    <Form.Label>Height</Form.Label>
+                    <Form.Control type="number" name="height" onChange={this.onChangeHandler}/>
                     </Form.Group>
                 </Form.Row>
 
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" value="Send">
                     Submit
                 </Button>
             </Form>
