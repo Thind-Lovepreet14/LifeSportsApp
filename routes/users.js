@@ -1,9 +1,9 @@
 const router = require("express").Router();
-let Player = require("../models/basketball.model");
+let Player = require("../models/users.model");
 
 
 // /players endpoint gets us all player information
-router.get("/players", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const player = await Player.find();
     res.send(player);
@@ -13,7 +13,8 @@ router.get("/players", async (req, res) => {
 });
 
 // /addplayer lets us add a new player into our database
-router.post("/addplayer", async (req, res) => {
+router.post("/add", async (req, res) => {
+  console.log(req.body)
   try {
     // we've created a new Player here
     // then we want to store that information and set it to result
@@ -21,13 +22,14 @@ router.post("/addplayer", async (req, res) => {
     let result = await player.save();
 
     res.send(result);
-  } catch {
+  } catch(error){
+    console.log(error)
     res.send(500);
   }
 });
 
 // hitting the endpoint to return an update to current data
-router.put("/editplayer/:id", async (req, res) => {
+router.put("/edituser/:id", async (req, res) => {
   try {
     const player = await Player.findById(req.params.id);
     player.set(req.body);
@@ -39,7 +41,7 @@ router.put("/editplayer/:id", async (req, res) => {
 });
 
 //
-router.delete("/deleteplayer/:id", async (req, res) => {
+router.delete("/deleteusers/:id", async (req, res) => {
   try {
     const player = await Player.findByIdAndDelete(req.params.id);
 

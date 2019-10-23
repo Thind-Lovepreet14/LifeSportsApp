@@ -37,7 +37,7 @@ const playerSchema = new Schema(
       minlength: 1
     },
     height: {
-      type: String,
+      type: Number,
       required: true,
       trim: true,
       minlength: 1

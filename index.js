@@ -5,7 +5,7 @@ const path = require("path");
 
 const app = express();
 const port = process.env.PORT || 5000;
-let uri = process.env.LOCAL_URI;
+let uri = "";
 
 // register middleware
 app.use(express.urlencoded({ extended: true }));
@@ -33,11 +33,12 @@ connection.once("open", () => {
 // register api catalogue
 // const exercisesRouter = require('./routes/exercises');
 // const usersRouter = require('./routes/users');
-const basketballRouter = require("./routes/basketball");
+const usersRouter = require("./routes/users");
 
 // app.use('/exercises', exercisesRouter);
 // app.use('/users', usersRouter);
-app.use("/basketball", basketballRouter);
+app.use("/users", usersRouter);
+
 
 // Creating live connection to reactjs app
 // Define any API routes before this runs
