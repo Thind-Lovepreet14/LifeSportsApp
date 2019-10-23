@@ -1,14 +1,22 @@
 const router = require("express").Router();
 let Player = require("../models/users.model");
 
-
 // /players endpoint gets us all player information
 router.get("/", async (req, res) => {
   try {
     const player = await Player.find();
     res.send(player);
-  } catch {
-    res.send(404);
+  } catch(error) {
+    res.status(404).send(error);
+  }
+});
+
+router.get("/gender/:gender", async (req, res) => {
+  try {
+    const findGender = await Player.find( { gender: { $in: [`${req.params.gender}`] } } )
+    res.send(findGender);
+  } catch(error) {
+    res.status(404).send(error);
   }
 });
 
@@ -23,8 +31,7 @@ router.post("/add", async (req, res) => {
 
     res.send(result);
   } catch(error){
-    console.log(error)
-    res.send(500);
+    res.status(500).send(error);
   }
 });
 
@@ -35,8 +42,8 @@ router.put("/edituser/:id", async (req, res) => {
     player.set(req.body);
     const result = await player.save();
     res.send(result);
-  } catch {
-    res.send(404);
+  } catch(error) {
+    res.status(404).send(error);
   }
 });
 
@@ -46,8 +53,8 @@ router.delete("/deleteusers/:id", async (req, res) => {
     const player = await Player.findByIdAndDelete(req.params.id);
 
     res.send(player);
-  } catch {
-    res.send(404);
+  } catch(error) {
+    res.status(404).send(error);
   }
 });
 

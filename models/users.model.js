@@ -21,8 +21,7 @@ const playerSchema = new Schema(
     gender: {
       type: String,
       requied: true,
-      trim: true,
-      minlength: 1
+      trim: true
     },
     age: {
       type: Number,
