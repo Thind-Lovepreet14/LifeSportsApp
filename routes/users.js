@@ -48,9 +48,9 @@ router.put("/edituser/:id", async (req, res) => {
 });
 
 //
-router.delete("/deleteusers/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
-    const player = await Player.findByIdAndDelete(req.params.id);
+    const player = await Player.deleteOne({ _id:req.params.id });
 
     res.send(player);
   } catch(error) {
