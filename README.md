@@ -1,6 +1,5 @@
 # LifeSports App
-This app allows the user to keep track of which exercises are performed for each unique individual.
-
+This app allows the user to create new users which are filtered by gender for their respective pages. Future installments will allow the user to select positions on the basketball court, as well as have a more dynamic player profile.
 
 ## Getting Started
 
