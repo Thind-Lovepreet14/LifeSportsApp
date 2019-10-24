@@ -11,14 +11,26 @@ router.get("/", async (req, res) => {
   }
 });
 
+// getting the specified gender by manually inputting a query 
 router.get("/gender/:gender", async (req, res) => {
   try {
+    // findGender will separate the genders based on what the user inputs into their profile
     const findGender = await Player.find( { gender: { $in: [`${req.params.gender}`] } } )
     res.send(findGender);
   } catch(error) {
     res.status(404).send(error);
   }
 });
+
+router.get("/position/:position", async (req, res) => {
+  try {
+    const findPos = await Player.find( { position: { $in: [`${req.params.position}`] } } );
+    res.send(findPos);
+  } catch(error) {
+    res.status(404).send(error);
+  }
+})
+
 
 // /addplayer lets us add a new player into our database
 router.post("/add", async (req, res) => {
