@@ -1,5 +1,5 @@
 # LifeSports App
-This app allows the user to create new users which are filtered by gender for their respsective pages. Future installments will allow the user to selection positions on the basketball court as well as a more dynamic player profile.
+This app allows the user to create new users which are filtered by gender for their respsective pages. Future installments will allow the user to selection positions on the basketball court, as well as a more dynamic player profile.
 
 
 ## Getting Started
