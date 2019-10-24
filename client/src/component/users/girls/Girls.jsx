@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Card,ListGroup,ListGroupItem, CardDeck, Button } from 'react-bootstrap';
 
 
-class Boys extends React.Component {
+class Girls extends React.Component {
     constructor(props) {
         super(props);
 
@@ -16,7 +16,7 @@ class Boys extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('/users/gender/male')
+        axios.get('/users/gender/female')
           .then(
               (res) => {
                   this.setState({
@@ -44,21 +44,21 @@ class Boys extends React.Component {
           return(
               <>
                 <div className="boys-container row">
-                    {users.map((usersBoys, index) => (
+                    {users.map((usersGirls, index) => (
                         <div key={index} className="card-container col-sm-12 col-md-3">
                             <CardDeck >
                                 <Card>
-                                    <Card.Img variant="top" className="card-image" src="https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1145&q=80" />
+                                    <Card.Img variant="top" className="card-image" src="https://images.unsplash.com/photo-1472698938026-79bed881e5b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" />
                                     <Card.Body>
-                                        <Card.Title>{usersBoys.firstName} {usersBoys.lastName}</Card.Title>
+                                        <Card.Title>{usersGirls.firstName} {usersGirls.lastName}</Card.Title>
                                         <Card.Text>
                                         Tellus pellentesque eu tincidunt tortor aliquam nulla.
                                         </Card.Text>
                                     </Card.Body>
                                     <ListGroup className="list-group-flush">
-                                        <ListGroupItem>Age: {usersBoys.age}</ListGroupItem>
-                                        <ListGroupItem>Height: {usersBoys.height}in.</ListGroupItem>
-                                        <ListGroupItem>Position: {usersBoys.position}</ListGroupItem>
+                                        <ListGroupItem>Age: {usersGirls.age}</ListGroupItem>
+                                        <ListGroupItem>Height: {usersGirls.height}in.</ListGroupItem>
+                                        <ListGroupItem>Position: {usersGirls.position}</ListGroupItem>
                                     </ListGroup>
                                     <Card.Body>
                                         <Button variant="outline-danger" deleteExercise={this.deleteExercise} key={users._id} onClick={() => { this.deleteExercise(users._id) }}>Delete</Button>
@@ -66,7 +66,6 @@ class Boys extends React.Component {
                                 </Card>
                                 </CardDeck>
                         </div>
-
                     ))}
                 </div>
               </>
@@ -75,4 +74,4 @@ class Boys extends React.Component {
 
 }
 
-export default Boys;
+export default Girls;

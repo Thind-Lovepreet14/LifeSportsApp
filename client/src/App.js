@@ -8,6 +8,7 @@ import NavBar from './component/utils/Navbar';
 import HomePage from './sitePages/HomePage';
 import CreateUserPage from './sitePages/CreateUserPage';
 import UserBoysPage from './sitePages/UserBoysPage';
+import UserGirlsPage from './sitePages/UserGirlsPage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path= '/' exact component={HomePage} />
         <Route path='/user' component={CreateUserPage} />
         <Route path='/boyUsers' component={UserBoysPage} />
+        <Route path='/girlUsers' component={UserGirlsPage} />
       </div>
     </Router>
   );
