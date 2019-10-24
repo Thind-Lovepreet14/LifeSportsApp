@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Card,ListGroup,ListGroupItem, CardDeck } from 'react-bootstrap';
+import { Card,ListGroup,ListGroupItem, CardDeck, Button } from 'react-bootstrap';
 
 
 class Boys extends React.Component {
@@ -10,6 +10,9 @@ class Boys extends React.Component {
         this.state= {
             users:[]
         }
+
+        this.deleteExercise = this.deleteExercise.bind(this)
+
     }
 
     componentDidMount() {
@@ -24,6 +27,15 @@ class Boys extends React.Component {
             console.log(error);
           })
     
+      }
+
+      deleteExercise(id) {
+        axios.delete('/users/'+id)
+          .then(response => { console.log(response.data)});
+    
+        this.setState({
+          users: this.state.users.filter(el => el._id !== id)
+        })
       }
 
       render() {
@@ -50,8 +62,7 @@ class Boys extends React.Component {
                                         <ListGroupItem>Position: {usersBoys.position}</ListGroupItem>
                                     </ListGroup>
                                     <Card.Body>
-                                        <Card.Link href="#">Card Link</Card.Link>
-                                        <Card.Link href="#">Another Link</Card.Link>
+                                        <Button variant="outline-danger" deleteExercise={this.deleteExercise} key={users._id} onClick={() => { this.deleteExercise(users._id) }}>Delete</Button>
                                     </Card.Body>
                                 </Card>
                                 </CardDeck>
