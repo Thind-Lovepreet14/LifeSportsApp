@@ -6,35 +6,38 @@ router.get("/", async (req, res) => {
   try {
     const player = await Player.find();
     res.send(player);
-  } catch(error) {
+  } catch (error) {
     res.status(404).send(error);
   }
 });
 
-// getting the specified gender by manually inputting a query 
+// getting the specified gender by manually inputting a query
 router.get("/gender/:gender", async (req, res) => {
   try {
     // findGender will separate the genders based on what the user inputs into their profile
-    const findGender = await Player.find( { gender: { $in: [`${req.params.gender}`] } } );
+    const findGender = await Player.find({
+      gender: { $in: [`${req.params.gender}`] }
+    });
     res.send(findGender);
-  } catch(error) {
+  } catch (error) {
     res.status(404).send(error);
   }
 });
 
 router.get("/position/:position", async (req, res) => {
   try {
-    const findPos = await Player.find( { position: { $in: [`${req.params.position}`] } } );
+    const findPos = await Player.find({
+      position: { $in: [`${req.params.position}`] }
+    });
     res.send(findPos);
-  } catch(error) {
+  } catch (error) {
     res.status(404).send(error);
   }
 });
 
-
 // /addplayer lets us add a new player into our database
 router.post("/add", async (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   try {
     // we've created a new Player here
     // then we want to store that information and set it to result
@@ -42,7 +45,7 @@ router.post("/add", async (req, res) => {
     let result = await player.save();
 
     res.send(result);
-  } catch(error){
+  } catch (error) {
     res.status(500).send(error);
   }
 });
@@ -54,18 +57,21 @@ router.put("/edituser/:id", async (req, res) => {
     player.set(req.body);
     const result = await player.save();
     res.send(result);
-  } catch(error) {
+  } catch (error) {
     res.status(404).send(error);
   }
 });
 
+<<<<<<< HEAD
 //
 router.delete("/:id", async (req, res) => {
+=======
+router.delete("/deleteuser/:id", async (req, res) => {
+>>>>>>> brian
   try {
-    const player = await Player.deleteOne({ _id:req.params.id });
-
+    const player = await Player.findByIdAndDelete(req.params.id);
     res.send(player);
-  } catch(error) {
+  } catch (error) {
     res.status(404).send(error);
   }
 });
