@@ -5,12 +5,12 @@ import { NavLink } from 'react-router-dom';
 const NavBar = () => {
     return(
         <Navbar bg="dark" variant="dark" expand="lg">
-            <Navbar.Brand href="#home">LifeSports</Navbar.Brand>
+            <NavLink to="/"><Navbar.Brand href="#home">LifeSports</Navbar.Brand></NavLink>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                 <NavLink exact={true} to="/"><Nav.Link href="#home">Home</Nav.Link></NavLink>
-                <Nav.Link href="#link">Basketball</Nav.Link>
+                <NavLink to="/basketball"><Nav.Link href="#link">Basketball</Nav.Link></NavLink>
                 <Nav.Link href="#link">Player Profile</Nav.Link>
                 <NavDropdown title="Users" id="basic-nav-dropdown">
                     <NavLink to='/boyUsers'><NavDropdown.Item href="#action/3.1">Boys</NavDropdown.Item></NavLink>
