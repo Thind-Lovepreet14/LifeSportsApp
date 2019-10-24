@@ -1,8 +1,11 @@
 import React from 'react';
-import image from '../../../public/Images/bbcourt.jpg';
 
-const court = () => {   
-
+const BballCourt = () => {   
+    return(
+        <div>
+            <img src="../images/bbcourt.jpg" />
+        </div>
+    )
 }
 
-export default court;
+export default BballCourt;
